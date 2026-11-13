@@ -2,7 +2,7 @@
 
 A small exploratory analysis in Python of a public hand-motion dataset. This is a gesture-recognition dataset, not a motor-learning dataset, so nothing here says anything about learning.
 
-**Author:** [Your name] | **Notebook:** `HPM_trajectory_analysis.ipynb`
+**Author:** Yashi | **Notebook:** `HPM_trajectory_analysis.ipynb`
 
 ## Data
 
@@ -20,7 +20,7 @@ When the reference frame changes, do raw coordinates still identify the gesture,
 - **Raw baseline:** each trajectory time-normalised and resampled to 50 points for all 7 channels.
 - **Simple features:** path length, total rotation (sum of angles between successive orientations), straightness (net displacement / path length), net rotation. Duration and speed were left out because they change in the Faster and Slower contexts.
 - **Classifier:** standardised logistic regression.
-- **Split without leakage:** the 420 trials are variations of only 35 recordings. I trained on recordings 1-3 of one context and tested on recordings 4-5 in every context (14 test samples per context). I trained twice, once on `Original_1` and once on `Original_2`.
+-**Trial-number-based split:** Train on trials 1–3 of one original context and test on trials 4–5 across every context (14 test samples per context). This assumes matching trial numbers identify corresponding source recordings. Correspondence was verified for Original_2 and displaced_world_1, but not for all other contexts.
 - **Check of trial correspondence:** for all 35 `Original_2` / `displaced_world_1` pairs, a best-fit rotation and translation (Kabsch alignment) reduced the RMS distance between corresponding points from about 1.36 to 0.0014, and the estimated rotation matches the documented transformation (1 m shift and a 180 degree rotation about Z). So trial numbers correspond for this pair; for the other contexts the correspondence is assumed, not verified.
 
 ## Results (accuracy on held-out recordings; chance = 0.14)
