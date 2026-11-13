@@ -6,7 +6,7 @@ A small exploratory analysis in Python of a public hand-motion dataset. This is 
 
 ## Data
 
-- HPM dataset: Hand Palm Motion gestures, Zenodo record 15020058 (DOI: 10.5281/zenodo.15020058), licence CC BY 4.0. [Check the record page and add the full author list.]
+- HPM dataset: Hand Palm Motion gestures, Zenodo record 15020058 (DOI: 10.5281/zenodo.15020058), licence CC BY 4.0.
 - 7 gestures x 5 recorded trials, augmented to 420 trials across 12 "contexts": `Original_1`, `Original_2`, `Slower`, `Faster`, `First_Half`, `Combination`, `displaced_body_1-3` (body frame translated and rotated) and `displaced_world_1-3` (world frame translated and rotated).
 - Each trial: time, x, y, z position and a quaternion orientation.
 - The data is not included in this repo. Download it from Zenodo.
